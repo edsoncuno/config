@@ -1,0 +1,45 @@
+general {
+        colors = true
+        color_good = "#00FF00"
+        color_bad = "#ff9900"
+        interval = 3
+}
+
+order += "ipv6"
+order += "wireless _first_"
+order += "ethernet _first_"
+order += "battery _first_"
+order += "memory"
+order += "volume master"
+order += "tztime local"
+
+wireless _first_ {
+        format_up = "WIRELESS: (%quality at %essid) %ip (%speed)"
+        format_down = "WIRELESS: NO"
+}
+
+ethernet _first_ {
+        format_up = "ETHERNET: %ip (%speed)"
+        format_down = "ETHERNET: NO"
+}
+
+battery _first_ {
+        format = "BATERY: %status %percentage %remaining"
+        format_down = "BATERY: NO"
+}
+
+memory {
+        format = "MEMORY: %used - %total"
+}
+
+volume master {
+        format = "♪: %volume"
+        format_muted = "♪: muted (%volume)"
+        device = "default"
+        mixer = "Master"
+        mixer_idx = 0
+}
+
+tztime local {
+        format = "%Y-%m-%d %H:%M:%S"
+}
