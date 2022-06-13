@@ -53,3 +53,6 @@ bindsym $mod+2 workspace number $ws2
 bindsym $mod+3 workspace number $ws3
 bindsym $mod+Shift+2 move container to workspace number $ws2
 bindsym $mod+Shift+3 move container to workspace number $ws3
+
+binsym XF86AudioRaiseVolumen exec --no-startup-id pactl set-sink-volumen @DEFAULT_SINK@ +10%
+binsym XF86AudioLowerVolumen exec --no-startup-id pactl set-sink-volumen @DEFAULT_SINK@ -10%
